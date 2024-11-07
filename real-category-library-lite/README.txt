@@ -1,10 +1,10 @@
 === Real Category Management: Content Management in Category Folders ===
-Contributors: devowl, mguenter, jankarres, mrguenter
+Contributors: devowl, mguenter, jankarres
 Tags: categories folders, content folders, content management, category management, category library, page folders, page management, post category, post folders, post management, page category, woocommerce folders, woocommerce category, learnpress folders, woocommerce category, bbPress folders, bbPress category, custom post type folders, custom post type management, custom post type category
-Stable tag: 4.2.23
+Stable tag: 4.2.24
 Requires at least: 5.9
 Requires PHP: 7.4.0
-Tested up to: 6.6
+Tested up to: 6.7
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.en.html
 
