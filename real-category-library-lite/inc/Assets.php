@@ -61,7 +61,7 @@ class Assets
             $this->enqueueStyle('admin', 'admin.css');
             // Add inline-style to avoid flickering effect
             if ($this->isScreenBase('edit')) {
-                \wp_add_inline_style($handle, '#wpbody { display: none; }');
+                \wp_add_inline_style($handle, '#wpbody { opacity: 0; }');
             }
         }
         // Localize script with server-side variables
