@@ -122,7 +122,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 
-### yahnis-elsts/plugin-update-checker (Version v5.4 | e8e53e6)
+### yahnis-elsts/plugin-update-checker (Version v5.6 | a2db687)
 A custom update checker for WordPress plugins and themes. Useful if you can't host your plugin in the official WP repository but still want it to support automatic updates.
 Homepage: https://github.com/YahnisElsts/plugin-update-checker/
 Licenses Used: MIT
