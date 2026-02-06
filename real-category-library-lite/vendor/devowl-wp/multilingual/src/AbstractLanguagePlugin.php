@@ -60,6 +60,7 @@ abstract class AbstractLanguagePlugin
     protected $splitTranslationEntriesCache = [];
     protected $findI18nKeyOfTranslationCache = [];
     protected $lockCurrentTranslations = \false;
+    protected $translateArrayCache = [];
     /**
      * C'tor.
      *
@@ -334,21 +335,23 @@ abstract class AbstractLanguagePlugin
      */
     public function translateArray($content, $skipKeys = [], $locale = null, $context = null)
     {
-        // Snapshot current translations
-        $useLocale = empty($locale) ? $this->getCurrentLanguageFallback() : $locale;
-        if ($useLocale === $this->getDefaultLanguage()) {
+        // Translation is only possible when more than one language is active
+        if (\count($this->getActiveLanguages()) < 2) {
             return $content;
         }
-        $this->createTemporaryTextDomain($useLocale);
-        $this->snapshotCurrentTranslations();
-        // Check if translations exists for that language and fallback to default language
-        if (\count($this->currentTranslationEntries['items']) === 0) {
-            // Snapshot default language
-            $this->createTemporaryTextDomain($this->getDefaultLanguage(), \true);
-            $this->snapshotCurrentTranslations(\true);
-            $this->createTemporaryTextDomain($useLocale, \true);
-        }
-        $expandedContent = Utils::expandKeys($content, $skipKeys);
+        // Snapshot current translations
+        $useLocale = empty($locale) ? $this->getCurrentLanguageFallback() : $locale;
+        // Snapshot default language for `findI18nKeyOfTranslation`
+        $this->createTemporaryTextDomain($this->getDefaultLanguage(), \true);
+        $this->snapshotCurrentTranslations(\true);
+        $this->createTemporaryTextDomain($useLocale, \true);
+        $expandedContent = Utils::expandKeys($content, $skipKeys, function ($key, &$value) {
+            if (\is_string($value) && !empty($value) && !\is_numeric($value) && isset($this->translateArrayCache[$value])) {
+                $value = $this->translateArrayCache[$value];
+                return \true;
+            }
+            return \false;
+        });
         $referenceMap = [];
         \array_walk_recursive($expandedContent, function (&$value) use(&$referenceMap) {
             if (\is_string($value) && !empty($value) && !\is_numeric($value)) {
@@ -491,7 +494,7 @@ abstract class AbstractLanguagePlugin
             return \false;
         }
         if ($this->moFile !== null) {
-            $skipFallbackTranslation = \false;
+            $isLocalePotFile = \false;
             $useLocale = $this->getWordPressCompatibleLanguageCode($locale);
             $overrideClassInstance = $this->getOverrideClassInstance();
             $potLanguages = [];
@@ -499,7 +502,7 @@ abstract class AbstractLanguagePlugin
             if ($overrideClassInstance !== null) {
                 // Check if fallback should be skipped if the POT language is currently in use
                 $potLanguages = $overrideClassInstance->getPotLanguages();
-                $skipFallbackTranslation = \in_array($useLocale, $potLanguages, \true);
+                $isLocalePotFile = \in_array($useLocale, $potLanguages, \true);
                 list(, $newMofile) = $overrideClassInstance->getMofilePath($mofile, $this->domain);
                 if ($newMofile !== \false) {
                     $mofile = $newMofile;
@@ -510,7 +513,7 @@ abstract class AbstractLanguagePlugin
                 // Always fall back to POT file as it holds message contexts and this is needed
                 // for `findI18nKeyOfTranslation`.
                 \trailingslashit(\dirname($this->moFile)) . $this->domain . '.pot',
-            ], $useLocale, $skipFallbackTranslation);
+            ], $useLocale, $isLocalePotFile);
             return \true;
         }
         return \false;

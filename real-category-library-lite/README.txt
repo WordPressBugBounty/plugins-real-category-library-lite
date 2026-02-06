@@ -1,10 +1,10 @@
 === Real Category Management: Content Management in Category Folders ===
 Contributors: devowl, mguenter, jankarres
 Tags: categories folders, content folders, content management, category management, category library, page folders, page management, post category, post folders, post management, page category, woocommerce folders, woocommerce category, learnpress folders, woocommerce category, bbPress folders, bbPress category, custom post type folders, custom post type management, custom post type category
-Stable tag: 4.2.45
+Stable tag: 4.2.64
 Requires at least: 5.9
 Requires PHP: 7.4.0
-Tested up to: 6.8
+Tested up to: 6.9
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.en.html
 
@@ -128,6 +128,20 @@ We offer a [knowledge base and fast support](https://devowl.io/support/) on our 
 
 = Is Real Category Management free? =
 **Yes, Real Category Management can be used for posts for free.** If you want to organize your content in custom post types like WooCommerce products, LearnPress content, bbPress forums, you need the PRO version. [**Learn more about the PRO version.**](https://devowl.io/go/real-category-management?source=wordpress-org-description)
+
+= Inspection of plugin source files =
+
+Most plugin files (PHP, templates, assets) are in the ZIP in human-friendly, unprocessed form (soure files).
+
+The plugin’s JavaScript/TypeScript is bundled (e.g. by Webpack) from plugin-specific packages and third-party open source to produce build files. Each build ends with `//# sourceMappingURL=…` to source maps with the original, human-readable code; these maps are public and the included source code can be inspected by anyone directly in your browser, if you have installed the plugin.
+
+To conveniently view the complete codebase of the consumed script in e.g. Chromium/Google Chrome, open *⋮ > More tools > Developer tools > ⋮ (in DevTools) > Settings > Preferences > Sources* and enable "JavaScript source maps", "CSS source maps", and "Allow DevTools to load resources, such as source maps, from remote file paths". Reload, then open *DevTools > Sources > "devowl-local-files"* to inspect all readable sources.
+
+Source maps are hosted outside the ZIP to keep size manageable; otherwise the plugin could exceed limits of web hosts and become non-installable.
+
+The repository with all source files can be do be inspected by anyone at [assets.devowl.io/wordpress-plugins-source-code.zip](https://assets.devowl.io/wordpress-plugins-source-code.zip). Please check out the `README.md` in the repository to learn how to get started!
+
+For details on the data procession of our servers, please read [devowl.io/privacy-policy](https://devowl.io/privacy-policy/).
 
 == Screenshots ==
 1. Manage content in Folders

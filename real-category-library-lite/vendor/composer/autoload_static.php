@@ -14,7 +14,7 @@ class ComposerStaticInit28193729ee0f9308bdeb00b1f766a9c6
     );
 
     public static $prefixLengthsPsr4 = array (
-        'D' => 
+        'D' =>
         array (
             'DevOwl\\RealCategoryLibrary\\Vendor\\MatthiasWeb\\WpdbBatch\\' => 56,
             'DevOwl\\RealCategoryLibrary\\Vendor\\MatthiasWeb\\Utils\\' => 52,
@@ -28,35 +28,35 @@ class ComposerStaticInit28193729ee0f9308bdeb00b1f766a9c6
     );
 
     public static $prefixDirsPsr4 = array (
-        'DevOwl\\RealCategoryLibrary\\Vendor\\MatthiasWeb\\WpdbBatch\\' => 
+        'DevOwl\\RealCategoryLibrary\\Vendor\\MatthiasWeb\\WpdbBatch\\' =>
         array (
             0 => __DIR__ . '/..' . '/matthiasweb/wpdb-batch/src',
         ),
-        'DevOwl\\RealCategoryLibrary\\Vendor\\MatthiasWeb\\Utils\\' => 
+        'DevOwl\\RealCategoryLibrary\\Vendor\\MatthiasWeb\\Utils\\' =>
         array (
             0 => __DIR__ . '/..' . '/devowl-wp/utils/src',
         ),
-        'DevOwl\\RealCategoryLibrary\\Vendor\\DevOwl\\RealUtils\\' => 
+        'DevOwl\\RealCategoryLibrary\\Vendor\\DevOwl\\RealUtils\\' =>
         array (
             0 => __DIR__ . '/..' . '/devowl-wp/real-utils/src',
         ),
-        'DevOwl\\RealCategoryLibrary\\Vendor\\DevOwl\\RealProductManagerWpClient\\' => 
+        'DevOwl\\RealCategoryLibrary\\Vendor\\DevOwl\\RealProductManagerWpClient\\' =>
         array (
             0 => __DIR__ . '/..' . '/devowl-wp/real-product-manager-wp-client/src',
         ),
-        'DevOwl\\RealCategoryLibrary\\Vendor\\DevOwl\\Multilingual\\' => 
+        'DevOwl\\RealCategoryLibrary\\Vendor\\DevOwl\\Multilingual\\' =>
         array (
             0 => __DIR__ . '/..' . '/devowl-wp/multilingual/src',
         ),
-        'DevOwl\\RealCategoryLibrary\\Vendor\\DevOwl\\Freemium\\' => 
+        'DevOwl\\RealCategoryLibrary\\Vendor\\DevOwl\\Freemium\\' =>
         array (
             0 => __DIR__ . '/..' . '/devowl-wp/freemium/src',
         ),
-        'DevOwl\\RealCategoryLibrary\\Vendor\\ColinODell\\Json5\\' => 
+        'DevOwl\\RealCategoryLibrary\\Vendor\\ColinODell\\Json5\\' =>
         array (
             0 => __DIR__ . '/..' . '/colinodell/json5/src',
         ),
-        'DevOwl\\RealCategoryLibrary\\' => 
+        'DevOwl\\RealCategoryLibrary\\' =>
         array (
             0 => __DIR__ . '/../..' . '/inc',
             1 => __DIR__ . '/../..' . '/src/inc',

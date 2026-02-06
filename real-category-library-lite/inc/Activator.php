@@ -47,7 +47,7 @@ class Activator
     {
         global $wpdb;
         // Check if column already exists
-        $row = $wpdb->get_results("SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE table_name = '{$wpdb->terms}' AND column_name = 'term_order';");
+        $row = $wpdb->get_results($wpdb->prepare("SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE table_schema = %s AND table_name = %s AND column_name = 'term_order';", $wpdb->dbname, $wpdb->terms));
         if (empty($row)) {
             $wpdb->query("ALTER TABLE {$wpdb->terms} ADD term_order INT(11) NOT NULL DEFAULT 0");
         }

@@ -8,7 +8,7 @@
  * Description:     Manage posts, pages and custom post-types in an explorer-like tree view and create a custom order for your categories and other taxonomies.
  * Author:          devowl.io
  * Author URI:      https://devowl.io
- * Version:                                                                                   4.2.45
+ * Version:                                                                                                      4.2.64
  * Text Domain:     real-category-library
  * Domain Path:     /languages
  */

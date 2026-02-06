@@ -3,6 +3,979 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.2.64 (2026-02-05)
+
+
+### Bug Fixes
+
+* compatibility with WooCommerce attributes (CU-869c1arhc)
+
+
+<details><summary>Dependency updates @devowl-wp/utils 1.20.13</summary>
+
+
+**_Purpose of dependency:_** _Utility functionality for all your WordPress plugins._
+##### Bug Fixes
+
+* compatibility with Hostinger and services could not be created (CU-869c14a9d)</details>
+
+
+
+
+
+## 4.2.63 (2026-02-02) (not released)
+
+**Note:** This version of the package has not (yet) been released publicly. This happens if changes have been made in dependencies that do not affect this package (e.g. changes for the development of the package). The changes will be rolled out with the next official update.
+
+**Note:** This package (@devowl-wp/real-category-library) has been updated because a dependency, which is also shipped with this package, has changed.
+
+
+<details><summary>Development dependency update @devowl-wp/api 1.6.3</summary>
+
+
+**_Purpose of dependency:_** _Shared typings for all Node.js backends and frontends._
+##### Bug Fixes
+
+* avoid passing complete zod schemas to ContractResponse (CU-869bdvdfh)</details>
+
+<details><summary>Development dependency update @devowl-wp/continuous-localization 0.8.32</summary>
+
+
+**_Purpose of dependency:_** _Provide a CLI to push and pull localization files from different translation management systems._
+##### Bug Fixes
+
+* compatibility with Weblate 5.13 (file form params) and correctly create create/update component source file (CU-869bu5atn)
+
+
+##### Build System
+
+* correctly fetch languages for frontends (CU-869bu5atn)</details>
+
+
+
+
+
+## 4.2.62 (2026-01-23) (not released)
+
+**Note:** This version of the package has not (yet) been released publicly. This happens if changes have been made in dependencies that do not affect this package (e.g. changes for the development of the package). The changes will be rolled out with the next official update.
+
+**Note:** This package (@devowl-wp/real-category-library) has been updated because a dependency, which is also shipped with this package, has changed.
+
+
+<details><summary>Development dependency update @devowl-wp/node-gitlab-ci 0.8.15</summary>
+
+
+**_Purpose of dependency:_** _Create dynamic GitLab CI pipelines in JavaScript or TypeScript for each project. Reuse and inherit instructions and avoid duplicate code!_
+##### Bug Fixes
+
+* validate container registry image did not catch curl errors correctly (CU-86931jwau)</details>
+
+
+
+
+
+## 4.2.61 (2026-01-20) (not released)
+
+**Note:** This version of the package has not (yet) been released publicly. This happens if changes have been made in dependencies that do not affect this package (e.g. changes for the development of the package). The changes will be rolled out with the next official update.
+
+
+### Code Refactoring
+
+* migrate from Jest to Vitest and clean up related configurations (CU-86931jwau)
+* migrate to ESM (CU-861mnuuc5)
+* safer usage of imports and exports with TypeScript's verbatimModuleSyntax option (CU-861mhn5rj)
+* use package.json#exports everywhere for ESM preparation (CU-861mnuuc5)
+
+
+### Maintenance
+
+* upgrade dependencies (CU-86931jwau)
+
+
+<details><summary>Dependency updates @devowl-wp/freemium 1.3.127</summary>
+
+
+**_Purpose of dependency:_** _Make your plugin to a freemium plugin with predefined Envato support_
+##### Code Refactoring
+
+* migrate to ESM (CU-861mnuuc5)
+* safer usage of imports and exports with TypeScript's verbatimModuleSyntax option (CU-861mhn5rj)
+* use package.json#exports everywhere for ESM preparation (CU-861mnuuc5)
+
+
+##### Maintenance
+
+* make CI build work (CU-861mnuuc5)
+* upgrade dependencies (CU-86931jwau)</details>
+
+<details><summary>Dependency updates @devowl-wp/react-folder-tree 0.1.23</summary>
+
+
+**_Purpose of dependency:_** _Feature-rich folder tree renderer with toolbar (formerly react-aiot)._
+##### Code Refactoring
+
+* migrate to ESM (CU-861mnuuc5)
+* use package.json#exports everywhere for ESM preparation (CU-861mnuuc5)
+
+
+##### Maintenance
+
+* upgrade dependencies (CU-86931jwau)</details>
+
+<details><summary>Dependency updates @devowl-wp/react-utils 1.0.16</summary>
+
+
+**_Purpose of dependency:_** _Provide various React utils, side effect free and tree shakeable._
+##### Code Refactoring
+
+* migrate to ESM (CU-861mnuuc5)
+* safer usage of imports and exports with TypeScript's verbatimModuleSyntax option (CU-861mhn5rj)
+* use package.json#exports everywhere for ESM preparation (CU-861mnuuc5)</details>
+
+<details><summary>Dependency updates @devowl-wp/real-product-manager-wp-client 1.20.10</summary>
+
+
+**_Purpose of dependency:_** _A WordPress client for Real Product Manager_
+##### Code Refactoring
+
+* migrate from Jest to Vitest and clean up related configurations (CU-86931jwau)
+* migrate to ESM (CU-861mnuuc5)
+* safer usage of imports and exports with TypeScript's verbatimModuleSyntax option (CU-861mhn5rj)
+* use package.json#exports everywhere for ESM preparation (CU-861mnuuc5)
+
+
+##### Maintenance
+
+* upgrade dependencies (CU-86931jwau)</details>
+
+<details><summary>Dependency updates @devowl-wp/real-utils 1.14.10</summary>
+
+
+**_Purpose of dependency:_** _Create cross-selling ads, about page, rating and newsletter input for WP Real plugins._
+##### Code Refactoring
+
+* migrate from Jest to Vitest and clean up related configurations (CU-86931jwau)
+* migrate to ESM (CU-861mnuuc5)
+* safer usage of imports and exports with TypeScript's verbatimModuleSyntax option (CU-861mhn5rj)
+* use package.json#exports everywhere for ESM preparation (CU-861mnuuc5)
+
+
+##### Maintenance
+
+* upgrade dependencies (CU-86931jwau)</details>
+
+<details><summary>Dependency updates @devowl-wp/utils 1.20.10</summary>
+
+
+**_Purpose of dependency:_** _Utility functionality for all your WordPress plugins._
+##### Code Refactoring
+
+* migrate from Jest to Vitest and clean up related configurations (CU-86931jwau)
+* migrate to ESM (CU-861mnuuc5)
+* remove deprecated packages which are coming with native Node 24 (CU-86931jwau)
+* remove fs-extra, use fs:promise and disallow blocking/sync methods (CU-86931jwau)
+* safer usage of imports and exports with TypeScript's verbatimModuleSyntax option (CU-861mhn5rj)
+* use package.json#exports everywhere for ESM preparation (CU-861mnuuc5)
+
+
+##### Maintenance
+
+* make CI build work (CU-861mnuuc5)
+* upgrade dependencies (CU-86931jwau)</details>
+
+<details><summary>Development dependency update @devowl-wp/api 1.6.1</summary>
+
+
+**_Purpose of dependency:_** _Shared typings for all Node.js backends and frontends._
+##### Bug Fixes
+
+* add HTTP 410 Gone status for deleted reports in order service (CU-8699tgz5g)
+* add media upload functionality for logos (CU-8699tgz5g)
+* adjust Content-Type handling in fetch client to allow browser to set for FormData (CU-8699tgz5g)
+* do not hide internal routes in OpenAPI in non-production environments (CU-8699tgz5g)
+* improve developer experience as using schema-mutable methods outside the middleware looses validations and refinements (CU-8699tgz5g)
+* prevent duplicate tags in OpenAPI document generation (CU-8699tgz5g)
+* review points including 20 (CU-8699tgz5g)
+* throw runtime error when refine is used in schema definition (CU-8699tgz5g)
+
+
+##### Code Refactoring
+
+* migrate from Jest to Vitest and clean up related configurations (CU-86931jwau)
+* migrate to ESM (CU-861mnuuc5)
+* safer usage of imports and exports with TypeScript's verbatimModuleSyntax option (CU-861mhn5rj)
+* update refine function parameter naming for consistency across schemas (CU-8699tgz5g)
+* use package.json#exports everywhere for ESM preparation (CU-861mnuuc5)
+
+
+##### Documentation
+
+* enhance group management by introducing parent relationships and sorting (CU-8699tgz5g)
+
+
+##### Maintenance
+
+* upgrade to Node 24 (CU-86931jwau)</details>
+
+<details><summary>Development dependency update @devowl-wp/composer-licenses 0.1.20</summary>
+
+
+**_Purpose of dependency:_** _Helper functionalities for your composer project to validate licenses and generate a disclaimer._
+##### Code Refactoring
+
+* migrate to ESM (CU-861mnuuc5)
+* use package.json#exports everywhere for ESM preparation (CU-861mnuuc5)</details>
+
+<details><summary>Development dependency update @devowl-wp/continuous-integration 0.7.13</summary>
+
+
+**_Purpose of dependency:_** _DevOps macros, job templates and jobs for Gitlab CI and @devowl-wp/node-gitlab-ci._
+##### Bug Fixes
+
+* only scan current branch with gitleaks (CU-869aw6tca)
+
+
+##### Code Refactoring
+
+* migrate from Jest to Vitest and clean up related configurations (CU-86931jwau)
+* migrate to ESM (CU-861mnuuc5)
+* remove deprecated packages which are coming with native Node 24 (CU-86931jwau)
+* remove fs-extra, use fs:promise and disallow blocking/sync methods (CU-86931jwau)
+* replace execSync with spawnSync for improved command execution consistency and security (CU-86931jwau)
+* safer usage of imports and exports with TypeScript's verbatimModuleSyntax option (CU-861mhn5rj)
+* use package.json#exports everywhere for ESM preparation (CU-861mnuuc5)
+
+
+##### Maintenance
+
+* use complyforce.com as production domain (CU-8699th190)</details>
+
+<details><summary>Development dependency update @devowl-wp/continuous-localization 0.8.30</summary>
+
+
+**_Purpose of dependency:_** _Provide a CLI to push and pull localization files from different translation management systems._
+##### Bug Fixes
+
+* improve weblate component settings sync for file formats (CU-86931jwau)
+
+
+##### Code Refactoring
+
+* migrate to ESM (CU-861mnuuc5)
+* remove deprecated packages which are coming with native Node 24 (CU-86931jwau)
+* remove fs-extra, use fs:promise and disallow blocking/sync methods (CU-86931jwau)
+* replace execSync with spawnSync for improved command execution consistency and security (CU-86931jwau)
+* safer usage of imports and exports with TypeScript's verbatimModuleSyntax option (CU-861mhn5rj)
+* use package.json#exports everywhere for ESM preparation (CU-861mnuuc5)
+
+
+##### Maintenance
+
+* make CI build work (CU-861mnuuc5)
+* upgrade dependencies (CU-86931jwau)</details>
+
+<details><summary>Development dependency update @devowl-wp/eslint-config 0.2.21</summary>
+
+
+**_Purpose of dependency:_** _Provide eslint configuration for our complete monorepo._
+##### Code Refactoring
+
+* migrate from Jest to Vitest and clean up related configurations (CU-86931jwau)
+* migrate to ESM (CU-861mnuuc5)
+* remove fs-extra, use fs:promise and disallow blocking/sync methods (CU-86931jwau)
+* replace execSync with spawnSync for improved command execution consistency and security (CU-86931jwau)
+* safer usage of imports and exports with TypeScript's verbatimModuleSyntax option (CU-861mhn5rj)
+* use package.json#exports everywhere for ESM preparation (CU-861mnuuc5)
+
+
+##### Maintenance
+
+* upgrade dependencies (CU-86931jwau)
+* upgrade to Node 24 (CU-86931jwau)
+* use Relation type for ESM preparation in TypeORM relations (CU-861mnuuc5)</details>
+
+<details><summary>Development dependency update @devowl-wp/monorepo-utils 0.2.22</summary>
+
+
+**_Purpose of dependency:_** _Predefined monorepo utilities and tasks._
+##### Code Refactoring
+
+* migrate to ESM (CU-861mnuuc5)
+* remove fs-extra, use fs:promise and disallow blocking/sync methods (CU-86931jwau)
+* replace execSync with spawnSync for improved command execution consistency and security (CU-86931jwau)
+* safer usage of imports and exports with TypeScript's verbatimModuleSyntax option (CU-861mhn5rj)
+* use package.json#exports everywhere for ESM preparation (CU-861mnuuc5)
+
+
+##### Maintenance
+
+* make CI build work (CU-861mnuuc5)
+* upgrade dependencies (CU-86931jwau)</details>
+
+<details><summary>Development dependency update @devowl-wp/node-gitlab-ci 0.8.14</summary>
+
+
+**_Purpose of dependency:_** _Create dynamic GitLab CI pipelines in JavaScript or TypeScript for each project. Reuse and inherit instructions and avoid duplicate code!_
+##### Code Refactoring
+
+* migrate to ESM (CU-861mnuuc5)
+* remove deprecated packages which are coming with native Node 24 (CU-86931jwau)
+* remove fs-extra, use fs:promise and disallow blocking/sync methods (CU-86931jwau)
+* replace execSync with spawnSync for improved command execution consistency and security (CU-86931jwau)
+* safer usage of imports and exports with TypeScript's verbatimModuleSyntax option (CU-861mhn5rj)
+* use package.json#exports everywhere for ESM preparation (CU-861mnuuc5)
+
+
+##### Maintenance
+
+* make CI build work (CU-861mnuuc5)</details>
+
+<details><summary>Development dependency update @devowl-wp/npm-licenses 0.1.15</summary>
+
+
+**_Purpose of dependency:_** _Helper functionalities for your project to validate licenses and generate a disclaimer._
+##### Code Refactoring
+
+* migrate to ESM (CU-861mnuuc5)
+* use package.json#exports everywhere for ESM preparation (CU-861mnuuc5)</details>
+
+<details><summary>Development dependency update @devowl-wp/phpcs-config 0.1.19</summary>
+
+
+**_Purpose of dependency:_** _Predefined functionalities for PHPCS._
+##### Code Refactoring
+
+* migrate to ESM (CU-861mnuuc5)
+* use package.json#exports everywhere for ESM preparation (CU-861mnuuc5)</details>
+
+<details><summary>Development dependency update @devowl-wp/regexp-translation-extractor 0.2.47</summary>
+
+
+**_Purpose of dependency:_** _Provide a performant translation extractor based on regular expression._
+##### Code Refactoring
+
+* migrate to ESM (CU-861mnuuc5)
+* remove fs-extra, use fs:promise and disallow blocking/sync methods (CU-86931jwau)
+* safer usage of imports and exports with TypeScript's verbatimModuleSyntax option (CU-861mhn5rj)
+* use package.json#exports everywhere for ESM preparation (CU-861mnuuc5)</details>
+
+<details><summary>Development dependency update @devowl-wp/ts-config 0.1.19</summary>
+
+
+**_Purpose of dependency:_** _Predefined compiler options for our backends._
+##### Code Refactoring
+
+* migrate to ESM (CU-861mnuuc5)
+* safer usage of imports and exports with TypeScript's verbatimModuleSyntax option (CU-861mhn5rj)
+* use package.json#exports everywhere for ESM preparation (CU-861mnuuc5)</details>
+
+<details><summary>Development dependency update @devowl-wp/webpack-config 0.2.52</summary>
+
+
+**_Purpose of dependency:_** _Webpack config builder for multiple ecosystems like standalone React frontends, Antd, Preact and WordPress._
+##### Code Refactoring
+
+* migrate to ESM (CU-861mnuuc5)
+* remove deprecated packages which are coming with native Node 24 (CU-86931jwau)
+* remove fs-extra, use fs:promise and disallow blocking/sync methods (CU-86931jwau)
+* replace execSync with spawnSync for improved command execution consistency and security (CU-86931jwau)
+* safer usage of imports and exports with TypeScript's verbatimModuleSyntax option (CU-861mhn5rj)
+* use package.json#exports everywhere for ESM preparation (CU-861mnuuc5)
+
+
+##### Maintenance
+
+* make CI build work (CU-861mnuuc5)
+* upgrade dependencies (CU-86931jwau)</details>
+
+
+
+
+
+## 4.2.60 (2026-01-15) (not released)
+
+**Note:** This version of the package has not (yet) been released publicly. This happens if changes have been made in dependencies that do not affect this package (e.g. changes for the development of the package). The changes will be rolled out with the next official update.
+
+
+### Maintenance
+
+* remove package.json#engines from internal packages (CU-86931jwau)
+
+
+<details><summary>Dependency updates @devowl-wp/freemium 1.3.126</summary>
+
+
+**_Purpose of dependency:_** _Make your plugin to a freemium plugin with predefined Envato support_
+##### Maintenance
+
+* remove package.json#engines from internal packages (CU-86931jwau)</details>
+
+<details><summary>Dependency updates @devowl-wp/real-product-manager-wp-client 1.20.9</summary>
+
+
+**_Purpose of dependency:_** _A WordPress client for Real Product Manager_
+##### Maintenance
+
+* remove package.json#engines from internal packages (CU-86931jwau)</details>
+
+<details><summary>Dependency updates @devowl-wp/real-utils 1.14.9</summary>
+
+
+**_Purpose of dependency:_** _Create cross-selling ads, about page, rating and newsletter input for WP Real plugins._
+##### Maintenance
+
+* remove package.json#engines from internal packages (CU-86931jwau)</details>
+
+<details><summary>Dependency updates @devowl-wp/utils 1.20.9</summary>
+
+
+**_Purpose of dependency:_** _Utility functionality for all your WordPress plugins._
+##### Maintenance
+
+* remove package.json#engines from internal packages (CU-86931jwau)
+
+
+##### Performance Improvements
+
+* allow to configure to put the huge JSON to the bottom of the HTML via RCB/Experimental/OptimizedWpLocalizeScript hook (CU-869b9znyx)</details>
+
+<details><summary>Development dependency update @devowl-wp/api 1.6.0</summary>
+
+
+**_Purpose of dependency:_** _Shared typings for all Node.js backends and frontends._
+##### Features
+
+* refactor new Contract API (CU-8699twn1u)
+
+
+##### Maintenance
+
+* ai review (CU-8699twn1u)
+* fix issues found in testing (CU-8699twn1u)
+* fix purpose in contracts ((CU-8699twn1u)
+* remove package.json#engines from internal packages (CU-86931jwau)</details>
+
+
+
+
+
+## 4.2.59 (2025-12-04) (not released)
+
+**Note:** This version of the package has not (yet) been released publicly. This happens if changes have been made in dependencies that do not affect this package (e.g. changes for the development of the package). The changes will be rolled out with the next official update.
+
+**Note:** This package (@devowl-wp/real-category-library) has been updated because a dependency, which is also shipped with this package, has changed.
+
+
+<details><summary>Development dependency update @devowl-wp/api 1.5.0</summary>
+
+
+**_Purpose of dependency:_** _Shared typings for all Node.js backends and frontends._
+##### Features
+
+* inital implementation of object-storage package (CU-8697h8axv)
+* introduce contract profiles with predefined internal profile to exclude from OpenAPI (CU-8699tgz5g)</details>
+
+
+
+
+
+## 4.2.58 (2025-12-02)
+
+
+### Bug Fixes
+
+* term_order column is not created on a MySQL instance with multiple databases which hold WordPress (CU-869ayp0zd)
+
+
+### Maintenance
+
+* compatibility with WordPress 6.9 (CU-869bakzm8)
+
+
+<details><summary>Development dependency update @devowl-wp/api 1.4.2</summary>
+
+
+**_Purpose of dependency:_** _Shared typings for all Node.js backends and frontends._
+##### Bug Fixes
+
+* implement missing file multipart upload in contracts (CU-869badh12)
+* implement missing file multipart upload in contracts fetch-client (CU-869badh12)</details>
+
+
+
+
+
+## 4.2.57 (2025-11-21) (not released)
+
+**Note:** This version of the package has not (yet) been released publicly. This happens if changes have been made in dependencies that do not affect this package (e.g. changes for the development of the package). The changes will be rolled out with the next official update.
+
+**Note:** This package (@devowl-wp/real-category-library) has been updated because a dependency, which is also shipped with this package, has changed.
+
+
+<details><summary>Development dependency update @devowl-wp/api 1.4.1</summary>
+
+
+**_Purpose of dependency:_** _Shared typings for all Node.js backends and frontends._
+##### Bug Fixes
+
+* allow to set a x-tagGroups via route details (CU-8699tgz5g)
+* remove redundant delivery ack policy handling (CU-869am6b3b)
+
+
+##### Maintenance
+
+* upgrade zod to latest v4 and refactor to zod imports instead of zod/v4 (CU-8699tgz5g)</details>
+
+<details><summary>Development dependency update @devowl-wp/continuous-integration 0.7.12</summary>
+
+
+**_Purpose of dependency:_** _DevOps macros, job templates and jobs for Gitlab CI and @devowl-wp/node-gitlab-ci._
+##### Maintenance
+
+* introduce secret-scanner with gitleaks (CU-869aw6tca)</details>
+
+<details><summary>Development dependency update @devowl-wp/eslint-config 0.2.20</summary>
+
+
+**_Purpose of dependency:_** _Provide eslint configuration for our complete monorepo._
+##### Maintenance
+
+* upgrade zod to latest v4 and refactor to zod imports instead of zod/v4 (CU-8699tgz5g)</details>
+
+
+
+
+
+## 4.2.56 (2025-10-15) (not released)
+
+**Note:** This version of the package has not (yet) been released publicly. This happens if changes have been made in dependencies that do not affect this package (e.g. changes for the development of the package). The changes will be rolled out with the next official update.
+
+
+### Continuous Integration
+
+* correctly type check with --project instead of cd into the TypeScript project folder (CU-8697h8axv)
+
+
+<details><summary>Dependency updates @devowl-wp/freemium 1.3.122</summary>
+
+
+**_Purpose of dependency:_** _Make your plugin to a freemium plugin with predefined Envato support_
+##### Continuous Integration
+
+* correctly type check with --project instead of cd into the TypeScript project folder (CU-8697h8axv)</details>
+
+<details><summary>Dependency updates @devowl-wp/real-product-manager-wp-client 1.20.5</summary>
+
+
+**_Purpose of dependency:_** _A WordPress client for Real Product Manager_
+##### Continuous Integration
+
+* correctly type check with --project instead of cd into the TypeScript project folder (CU-8697h8axv)</details>
+
+<details><summary>Dependency updates @devowl-wp/real-utils 1.14.5</summary>
+
+
+**_Purpose of dependency:_** _Create cross-selling ads, about page, rating and newsletter input for WP Real plugins._
+##### Continuous Integration
+
+* correctly type check with --project instead of cd into the TypeScript project folder (CU-8697h8axv)</details>
+
+<details><summary>Dependency updates @devowl-wp/utils 1.20.5</summary>
+
+
+**_Purpose of dependency:_** _Utility functionality for all your WordPress plugins._
+##### Continuous Integration
+
+* correctly type check with --project instead of cd into the TypeScript project folder (CU-8697h8axv)</details>
+
+<details><summary>Development dependency update @devowl-wp/api 1.4.0</summary>
+
+
+**_Purpose of dependency:_** _Shared typings for all Node.js backends and frontends._
+##### Bug Fixes
+
+* allow to create literal error code responses (CU-8699tgz5g)
+* allow to define routes to be a webhook (CU-8699tgz5g)
+* enhance vendor management contracts with new API endpoints and schema updates (CU-8699tgz5g)
+* make optional recursion schema properties work as expected (CU-8699tgz5g)
+
+
+##### Continuous Integration
+
+* correctly type check with --project instead of cd into the TypeScript project folder (CU-8697h8axv)
+
+
+##### Documentation
+
+* user session and magic link routes improved (CU-8699tgz5g)
+
+
+##### Features
+
+* enhance vendor and user management with new API endpoints and schema updates (CU-8699tgz5g)
+* introduce a contract-first design for message brokers with delivery-tuning (CU-869am6b3b)</details>
+
+<details><summary>Development dependency update @devowl-wp/continuous-localization 0.8.28</summary>
+
+
+**_Purpose of dependency:_** _Provide a CLI to push and pull localization files from different translation management systems._
+##### Bug Fixes
+
+* compatibility with the new q parameter in autotranslate since Weblate 5.13 (CU-869ar5pcu)
+* update error handling for existing languages (CU-869ar5pcu)</details>
+
+<details><summary>Development dependency update @devowl-wp/regexp-translation-extractor 0.2.45</summary>
+
+
+**_Purpose of dependency:_** _Provide a performant translation extractor based on regular expression._
+##### Continuous Integration
+
+* correctly type check with --project instead of cd into the TypeScript project folder (CU-8697h8axv)</details>
+
+<details><summary>Development dependency update @devowl-wp/ts-config 0.1.18</summary>
+
+
+**_Purpose of dependency:_** _Predefined compiler options for our backends._
+##### Continuous Integration
+
+* correctly type check with --project instead of cd into the TypeScript project folder (CU-8697h8axv)</details>
+
+
+
+
+
+## 4.2.55 (2025-09-24) (not released)
+
+**Note:** This version of the package has not (yet) been released publicly. This happens if changes have been made in dependencies that do not affect this package (e.g. changes for the development of the package). The changes will be rolled out with the next official update.
+
+
+### Documentation
+
+* access to source files of plugin (CU-869ad3694)
+
+
+<details><summary>Development dependency update @devowl-wp/continuous-integration 0.7.10</summary>
+
+
+**_Purpose of dependency:_** _DevOps macros, job templates and jobs for Gitlab CI and @devowl-wp/node-gitlab-ci._
+##### Continuous Integration
+
+* oss-extract only in master pipeline (CU-869ad3694)</details>
+
+<details><summary>Development dependency update @devowl-wp/eslint-config 0.2.19</summary>
+
+
+**_Purpose of dependency:_** _Provide eslint configuration for our complete monorepo._
+##### Build System
+
+* introduce .oss.ts and oss-extract CLI (CU-869ad3694)</details>
+
+<details><summary>Development dependency update @devowl-wp/monorepo-utils 0.2.19</summary>
+
+
+**_Purpose of dependency:_** _Predefined monorepo utilities and tasks._
+##### Build System
+
+* introduce .oss.ts and oss-extract CLI (CU-869ad3694)</details>
+
+<details><summary>Development dependency update @devowl-wp/webpack-config 0.2.49</summary>
+
+
+**_Purpose of dependency:_** _Webpack config builder for multiple ecosystems like standalone React frontends, Antd, Preact and WordPress._
+##### Build System
+
+* introduce .oss.ts and oss-extract CLI (CU-869ad3694)</details>
+
+
+
+
+
+## 4.2.54 (2025-09-12) (not released)
+
+**Note:** This version of the package has not (yet) been released publicly. This happens if changes have been made in dependencies that do not affect this package (e.g. changes for the development of the package). The changes will be rolled out with the next official update.
+
+**Note:** This package (@devowl-wp/real-category-library) has been updated because a dependency, which is also shipped with this package, has changed.
+
+
+<details><summary>Development dependency update @devowl-wp/api 1.3.2</summary>
+
+
+**_Purpose of dependency:_** _Shared typings for all Node.js backends and frontends._
+##### Bug Fixes
+
+* allow v1, v2, ... versioning beside semantic versioning for contract (CU-8699tgz5g)
+* remove undefined values from URLSearchParams (CU-869ad2n4f)
+
+
+##### Documentation
+
+* add another example for multiple nested recursion objects (CU-8699tgz5g)
+* uncaught Error: Cannot find module 'node:async_hooks'</details>
+
+<details><summary>Development dependency update @devowl-wp/continuous-localization 0.8.26</summary>
+
+
+**_Purpose of dependency:_** _Provide a CLI to push and pull localization files from different translation management systems._
+##### Bug Fixes
+
+* correctly check when a missing language already existed before (CU-8699tdjp0)</details>
+
+
+
+
+
+## 4.2.53 (2025-09-04) (not released)
+
+**Note:** This version of the package has not (yet) been released publicly. This happens if changes have been made in dependencies that do not affect this package (e.g. changes for the development of the package). The changes will be rolled out with the next official update.
+
+**Note:** This package (@devowl-wp/real-category-library) has been updated because a dependency, which is also shipped with this package, has changed.
+
+
+<details><summary>Development dependency update @devowl-wp/api 1.3.1</summary>
+
+
+**_Purpose of dependency:_** _Shared typings for all Node.js backends and frontends._
+##### Bug Fixes
+
+* content length is not always respond by server if using e.g. Cloudflare with Transfer-Encoding: chunked (CU-869ac6g7m)</details>
+
+
+
+
+
+## 4.2.52 (2025-09-04) (not released)
+
+**Note:** This version of the package has not (yet) been released publicly. This happens if changes have been made in dependencies that do not affect this package (e.g. changes for the development of the package). The changes will be rolled out with the next official update.
+
+**Note:** This package (@devowl-wp/real-category-library) has been updated because a dependency, which is also shipped with this package, has changed.
+
+
+<details><summary>Development dependency update @devowl-wp/api 1.3.0</summary>
+
+
+**_Purpose of dependency:_** _Shared typings for all Node.js backends and frontends._
+##### Bug Fixes
+
+* a fetch client need to pass the API version (CU-869a8xjjf)
+* run guard schema validations isolated from complete contract schema validation (CU-8699z5dt7)
+
+
+##### Code Refactoring
+
+* migrate from @devowl-wp/api-request to new fetch client (CU-869a8xjjf)
+
+
+##### Documentation
+
+* add README for contract-first instroductions (CU-8699z5dt7)
+
+
+##### Features
+
+* introduce type-safe createFetchClient from all contracts (CU-869a8xjjf)
+
+
+##### Tests
+
+* add Vitest test runner for our contracts and introduce a first draft for a RPC client type generator (CU-869a8xjjf)</details>
+
+<details><summary>Development dependency update @devowl-wp/continuous-integration 0.7.9</summary>
+
+
+**_Purpose of dependency:_** _DevOps macros, job templates and jobs for Gitlab CI and @devowl-wp/node-gitlab-ci._
+##### Build System
+
+* introduce Complyforce API backend (CU-8699tdjp0)
+
+
+##### Continuous Integration
+
+* pnpm-lock.yaml should be considered as common file change (CU-869a875re)</details>
+
+<details><summary>Development dependency update @devowl-wp/eslint-config 0.2.18</summary>
+
+
+**_Purpose of dependency:_** _Provide eslint configuration for our complete monorepo._
+##### Bug Fixes
+
+* switch from node fetch to undici request and make it work with streams and content encoding (CU-86997627z)</details>
+
+
+
+
+
+## 4.2.51 (2025-08-25) (not released)
+
+**Note:** This version of the package has not (yet) been released publicly. This happens if changes have been made in dependencies that do not affect this package (e.g. changes for the development of the package). The changes will be rolled out with the next official update.
+
+**Note:** This package (@devowl-wp/real-category-library) has been updated because a dependency, which is also shipped with this package, has changed.
+
+
+<details><summary>Dependency updates @devowl-wp/real-product-manager-wp-client 1.20.0</summary>
+
+
+**_Purpose of dependency:_** _A WordPress client for Real Product Manager_
+##### Features
+
+* translate into Slovenian and Croatia (CU-8699ce5ba)</details>
+
+<details><summary>Dependency updates @devowl-wp/real-utils 1.14.0</summary>
+
+
+**_Purpose of dependency:_** _Create cross-selling ads, about page, rating and newsletter input for WP Real plugins._
+##### Features
+
+* translate into Slovenian and Croatia (CU-8699ce5ba)</details>
+
+<details><summary>Dependency updates @devowl-wp/utils 1.20.0</summary>
+
+
+**_Purpose of dependency:_** _Utility functionality for all your WordPress plugins._
+##### Features
+
+* translate into Slovenian and Croatia (CU-8699ce5ba)</details>
+
+<details><summary>Development dependency update @devowl-wp/api 1.2.1</summary>
+
+
+**_Purpose of dependency:_** _Shared typings for all Node.js backends and frontends._
+##### Bug Fixes
+
+* make API contracts aware of recursion, parameters to object for refinable schema and switch language contexts correctly (CU-8699z5dt7)</details>
+
+<details><summary>Development dependency update @devowl-wp/continuous-localization 0.8.24</summary>
+
+
+**_Purpose of dependency:_** _Provide a CLI to push and pull localization files from different translation management systems._
+##### Bug Fixes
+
+* after creating a language wait for component to be idle and no task is running (CU-8699ce5ba)
+
+
+##### Continuous Integration
+
+* handle 404 error correctly after tasks was in progress previously (CU-8699ce5ba)</details>
+
+<details><summary>Development dependency update @devowl-wp/webpack-config 0.2.47</summary>
+
+
+**_Purpose of dependency:_** _Webpack config builder for multiple ecosystems like standalone React frontends, Antd, Preact and WordPress._
+##### Build System
+
+* ignore async_hooks in webpack (CU-8699z5dt7)</details>
+
+
+
+
+
+## 4.2.50 (2025-08-08) (not released)
+
+**Note:** This version of the package has not (yet) been released publicly. This happens if changes have been made in dependencies that do not affect this package (e.g. changes for the development of the package). The changes will be rolled out with the next official update.
+
+**Note:** This package (@devowl-wp/real-category-library) has been updated because a dependency, which is also shipped with this package, has changed.
+
+
+<details><summary>Development dependency update @devowl-wp/api 1.2.0</summary>
+
+
+**_Purpose of dependency:_** _Shared typings for all Node.js backends and frontends._
+##### Features
+
+* make API contracts compatible with OpenAPI, move guards to API definition and automatically generate API UI (CU-8699z5dt7)</details>
+
+
+
+
+
+## 4.2.49 (2025-07-29) (not released)
+
+**Note:** This version of the package has not (yet) been released publicly. This happens if changes have been made in dependencies that do not affect this package (e.g. changes for the development of the package). The changes will be rolled out with the next official update.
+
+**Note:** This package (@devowl-wp/real-category-library) has been updated because a dependency, which is also shipped with this package, has changed.
+
+
+<details><summary>Development dependency update @devowl-wp/continuous-integration 0.7.8</summary>
+
+
+**_Purpose of dependency:_** _DevOps macros, job templates and jobs for Gitlab CI and @devowl-wp/node-gitlab-ci._
+##### Continuous Integration
+
+* resource group for Docker Review deployments to avoid race condition in Swarm subnet allocation (CU-8699xj5ue)
+
+
+##### Tests
+
+* introduce optional playwright coverage with c8 (CU-8699761na)</details>
+
+<details><summary>Development dependency update @devowl-wp/monorepo-utils 0.2.17</summary>
+
+
+**_Purpose of dependency:_** _Predefined monorepo utilities and tasks._
+##### Bug Fixes
+
+* compatibility with latest version of Taskfile (CU-8699761na)</details>
+
+
+
+
+
+## 4.2.48 (2025-07-27) (not released)
+
+**Note:** This version of the package has not (yet) been released publicly. This happens if changes have been made in dependencies that do not affect this package (e.g. changes for the development of the package). The changes will be rolled out with the next official update.
+
+**Note:** This package (@devowl-wp/real-category-library) has been updated because a dependency, which is also shipped with this package, has changed.
+
+
+<details><summary>Dependency updates @devowl-wp/utils 1.19.35</summary>
+
+
+**_Purpose of dependency:_** _Utility functionality for all your WordPress plugins._
+##### Bug Fixes
+
+* uncaught InvalidArgument IdnaEncoder::encode() Argument [#1](https://git.owlinfra.de/devowlio/devowl-wp/issues/1) () must be of type string|Stringable, NULL given</details>
+
+
+
+
+
+## 4.2.47 (2025-07-23) (not released)
+
+**Note:** This version of the package has not (yet) been released publicly. This happens if changes have been made in dependencies that do not affect this package (e.g. changes for the development of the package). The changes will be rolled out with the next official update.
+
+**Note:** This package (@devowl-wp/real-category-library) has been updated because a dependency, which is also shipped with this package, has changed.
+
+
+<details><summary>Dependency updates @devowl-wp/utils 1.19.34</summary>
+
+
+**_Purpose of dependency:_** _Utility functionality for all your WordPress plugins._
+##### Bug Fixes
+
+* better anti ad-block system against Ghostery (CU-8697fw0r4)</details>
+
+
+
+
+
+## 4.2.46 (2025-07-16) (not released)
+
+**Note:** This version of the package has not (yet) been released publicly. This happens if changes have been made in dependencies that do not affect this package (e.g. changes for the development of the package). The changes will be rolled out with the next official update.
+
+**Note:** This package (@devowl-wp/real-category-library) has been updated because a dependency, which is also shipped with this package, has changed.
+
+
+<details><summary>Development dependency update @devowl-wp/api 1.1.8</summary>
+
+
+**_Purpose of dependency:_** _Shared typings for all Node.js backends and frontends._
+##### Bug Fixes
+
+* introduce translation options for fields and enhance translation handling in forms (CU-8699f32x9)</details>
+
+
+
+
+
 ## 4.2.45 (2025-07-10)
 
 **Note:** This package (@devowl-wp/real-category-library) has been updated because a dependency, which is also shipped with this package, has changed.

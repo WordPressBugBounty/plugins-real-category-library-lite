@@ -1,6 +1,6 @@
 {
     "name": "@devowl-wp/real-product-manager-wp-client",
-    "version": "1.19.49",
+    "version": "1.20.13",
     "private": true,
     "description": "A WordPress client for Real Product Manager",
     "homepage": "https://devowl.io",
@@ -10,7 +10,13 @@
         "**/*.{css,scss,less}",
         "./src/public/ts/*.tsx"
     ],
-    "main": "lib/index.tsx",
+    "type": "module",
+    "exports": {
+        ".": {
+            "devowl-source": "./lib/index.tsx",
+            "default": "./lib/index.js"
+        }
+    },
     "files": [
         "dist",
         "dev",
@@ -56,9 +62,9 @@
         "@devowl-wp/ts-config": "workspace:*",
         "@devowl-wp/utils": "workspace:*",
         "@devowl-wp/webpack-config": "workspace:*",
+        "@swc-node/register": "catalog:build",
         "@types/react": "catalog:types",
         "@types/react-dom": "catalog:types",
-        "ts-node": "catalog:build",
         "tslib": "catalog:build",
         "typescript": "catalog:build",
         "webpack": "catalog:webpack",
@@ -69,9 +75,6 @@
         "mobx": "*",
         "react": "*",
         "react-dom": "*"
-    },
-    "engines": {
-        "node": ">=14.15.0"
     },
     "continuous-localization": {
         "locales": {
@@ -113,7 +116,9 @@
             "pt_PT": "pt@formal",
             "pt_BR": false,
             "el": "el",
-            "ro_RO": "ro"
+            "ro_RO": "ro",
+            "sl_SI": "sl",
+            "hr": "hr"
         },
         "thresholds": {
             "de@informal": 100,
@@ -133,7 +138,9 @@
             "ro": 100,
             "el": 100,
             "fi": 100,
-            "sk": 100
+            "sk": 100,
+            "sl": 100,
+            "hr": 100
         },
         "machineTranslation": {
             "fr@formal": [
@@ -183,6 +190,9 @@
             ],
             "sk": [
                 "deepl"
+            ],
+            "sl": [
+                "deepl"
             ]
         },
         "copyFiles": {
@@ -225,6 +235,9 @@
             ],
             "fi_FI.(po)$": [
                 "fi.$1"
+            ],
+            "hr_HR.(po)$": [
+                "hr.$1"
             ]
         },
         "projects": {
@@ -306,9 +319,6 @@
         },
         "module": {
             "type": "es6"
-        },
-        "env": {
-            "coreJs": 3
         },
         "sourceMaps": true
     }
