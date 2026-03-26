@@ -97,8 +97,9 @@ trait Assets
      * @param string|string[] $handles
      * @param string[] $features See $ADVANCED_ENQUEUE_FEATURE_* constants or `null` for all features
      * @param string $type Can be `script` or `style`
+     * @param string[] $preloadChunks Chunks to preload by name
      */
-    public function enableAdvancedEnqueue($handles, $features = null, $type = 'script')
+    public function enableAdvancedEnqueue($handles, $features = null, $type = 'script', $preloadChunks = [])
     {
         $handles = \is_array($handles) ? $handles : [$handles];
         // Add `vendor-` also to the handles for `probablyEnqueueChunk` compatibility
@@ -113,7 +114,7 @@ trait Assets
             $this->enableAsyncEnqueue($handles);
         }
         if ($features === null || \in_array(Constants::ASSETS_ADVANCED_ENQUEUE_FEATURE_PRELOADING, $features, \true)) {
-            $this->enablePreloadEnqueue($handles, $type);
+            $this->enablePreloadEnqueue($handles, $type, $preloadChunks);
         }
         if ($features === null || \in_array(Constants::ASSETS_ADVANCED_ENQUEUE_FEATURE_PRIORITY_QUEUE, $features, \true)) {
             $this->enablePriorityQueue($handles, $type);
@@ -178,16 +179,18 @@ trait Assets
      *
      * @param string|string[] $handles
      * @param string $type Can be `script` or `style`
+     * @param string[] $preloadChunks Chunks to preload by name
      * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content
      */
-    public function enablePreloadEnqueue($handles, $type = 'script')
+    public function enablePreloadEnqueue($handles, $type = 'script', $preloadChunks = [])
     {
+        static $preloadedChunks = [];
         $handles = \is_array($handles) ? $handles : [$handles];
         $wp_dependencies = $type === 'script' ? \wp_scripts() : \wp_styles();
         foreach ($handles as $handle) {
             $this->handleToFeatures[$handle] = \array_merge($this->handleToFeatures[$handle] ?? [], [Constants::ASSETS_ADVANCED_ENQUEUE_FEATURE_PRELOADING]);
         }
-        \add_action('wp_head', function () use($handles, $type, $wp_dependencies) {
+        \add_action('wp_head', function () use($handles, $type, $wp_dependencies, $preloadChunks, &$preloadedChunks) {
             foreach ($handles as $handle) {
                 $script = $wp_dependencies->query($handle);
                 if ($script !== \false) {
@@ -202,6 +205,19 @@ trait Assets
                     $src = \apply_filters('script_loader_src', $src, $handle);
                     \printf('<link rel="preload" href="%s" as="%s" />
 ', \esc_url($src), $type);
+                    // Add chunk preloads if desired
+                    $chunks = $wp_dependencies->get_data($handle, 'chunks');
+                    if ($chunks) {
+                        foreach ($chunks as $chunkName => $chunkUrl) {
+                            if (!\in_array($chunkName, $preloadChunks, \true) || \in_array($chunkUrl, $preloadedChunks, \true)) {
+                                continue;
+                            }
+                            $chunkUrl = \apply_filters('script_loader_src', $chunkUrl, $handle);
+                            $preloadedChunks[] = $chunkUrl;
+                            \printf('<link rel="preload" href="%s" as="%s" />
+', \esc_url($chunkUrl), 'script');
+                        }
+                    }
                 }
             }
         }, 2);
@@ -257,6 +273,27 @@ trait Assets
             }
         }
         return (object) $result;
+    }
+    /**
+     * Get a map of all entry chunks manifests for all entry points.
+     */
+    public function getChunkEntryChunksManifest()
+    {
+        $path = \trailingslashit($this->getPluginConstant(Constants::PLUGIN_CONST_PATH));
+        static $chunkEntryChunksManifest = null;
+        if ($chunkEntryChunksManifest === null) {
+            $chunkEntryChunksManifest = [];
+            $chunkEntryChunksManifestFiles = \glob($path . $this->getPublicFolder() . '*-entry-chunks-manifest.json');
+            if ($chunkEntryChunksManifestFiles !== \false) {
+                foreach ($chunkEntryChunksManifestFiles as $chunkEntryChunksManifestFile) {
+                    $decoded = \json_decode(\file_get_contents($chunkEntryChunksManifestFile), ARRAY_A);
+                    if (\is_array($decoded)) {
+                        $chunkEntryChunksManifest = \array_merge($chunkEntryChunksManifest, $decoded);
+                    }
+                }
+            }
+        }
+        return $chunkEntryChunksManifest ?? [];
     }
     /**
      * Get the suffix for `chunks` localized variable including dependencies.
@@ -417,6 +454,22 @@ trait Assets
                     // Only set translations for our own entry points, libraries handle localization usually in another way
                     if (!$isLib) {
                         $this->setLazyScriptTranslations($useHandle, $this->getPluginConstant(Constants::PLUGIN_CONST_TEXT_DOMAIN), \trailingslashit($this->getPluginConstant(Constants::PLUGIN_CONST_PATH)) . Constants::LOCALIZATION_PUBLIC_JSON_I18N);
+                        // Add data about the available chunks for this entry point
+                        $chunkEntryChunksManifest = $this->getChunkEntryChunksManifest()[\basename($useSrc)] ?? [];
+                        if (\count($chunkEntryChunksManifest) > 0) {
+                            $resolvedUrls = [];
+                            foreach ($chunkEntryChunksManifest as $chunkName => $chunks) {
+                                foreach ($chunks as $chunk) {
+                                    // Can be e. g. `banner_tcf-pro-banner-lazy.pro.js?ver=cc803dc7507dbd12` or a `.css` file
+                                    if (\strpos($chunk, '.js') !== \false) {
+                                        $resolvedUrls[$chunkName] = \plugins_url($publicFolder . $chunk, $this->getPluginConstant(Constants::PLUGIN_CONST_FILE));
+                                        break;
+                                        // Only keep the first .js file per chunk name
+                                    }
+                                }
+                            }
+                            \wp_script_add_data($useHandle, 'chunks', $resolvedUrls);
+                        }
                     }
                 } else {
                     \wp_enqueue_style($useHandle, $url, $deps, $cachebuster, $media);

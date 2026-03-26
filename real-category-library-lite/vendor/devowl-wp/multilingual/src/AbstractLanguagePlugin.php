@@ -345,9 +345,13 @@ abstract class AbstractLanguagePlugin
         $this->createTemporaryTextDomain($this->getDefaultLanguage(), \true);
         $this->snapshotCurrentTranslations(\true);
         $this->createTemporaryTextDomain($useLocale, \true);
-        $expandedContent = Utils::expandKeys($content, $skipKeys, function ($key, &$value) {
-            if (\is_string($value) && !empty($value) && !\is_numeric($value) && isset($this->translateArrayCache[$value])) {
-                $value = $this->translateArrayCache[$value];
+        $cache =& $this->translateArrayCache[$useLocale];
+        if (!\is_array($cache)) {
+            $cache = [];
+        }
+        $expandedContent = Utils::expandKeys($content, $skipKeys, function ($key, &$value) use(&$cache) {
+            if (\is_string($value) && !empty($value) && !\is_numeric($value) && isset($cache[$value])) {
+                $value = $cache[$value];
                 return \true;
             }
             return \false;

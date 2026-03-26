@@ -182,6 +182,11 @@ abstract class AbstractOutputBufferPlugin extends AbstractLanguagePlugin
      */
     protected function remapResultToReference(&$content, $result, $locale, $context = null)
     {
+        $cacheLocale = empty($locale) ? $this->getCurrentLanguageFallback() : $locale;
+        $cache =& $this->translateArrayCache[$cacheLocale];
+        if (!\is_array($cache)) {
+            $cache = [];
+        }
         foreach ($content as $i => &$untranslated) {
             $previousContent = $untranslated;
             $translation = $result[$i] ?? null;
@@ -193,7 +198,7 @@ abstract class AbstractOutputBufferPlugin extends AbstractLanguagePlugin
             if ($previousContent === $translation) {
                 list(, $translation) = $this->translateStringFromMo($translation, $locale, $context);
             }
-            $this->translateArrayCache[$untranslated] = $translation;
+            $cache[$untranslated] = $translation;
             $untranslated = $translation;
         }
     }

@@ -97,7 +97,9 @@ class TranslatePress extends AbstractOutputBufferPlugin
                     if (!$doForce && \intval($row['status']) === 2) {
                         continue;
                     }
-                    $updates[] = ['id' => \intval($row['id']), 'translated' => $found_string_row[1] === null ? '' : $found_string_row[1], 'status' => $found_string_row[1] === null ? 0 : 2, 'original' => $row['original']];
+                    if ($found_string_row !== null) {
+                        $updates[] = ['id' => \intval($row['id']), 'translated' => $found_string_row[1] === null ? '' : $found_string_row[1], 'status' => $found_string_row[1] === null ? 0 : 2, 'original' => $row['original']];
+                    }
                 }
             }
             $query->update_strings($updates, $targetLocale, ['id', 'original', 'translated', 'status']);
@@ -235,6 +237,11 @@ class TranslatePress extends AbstractOutputBufferPlugin
     {
         global $wpdb;
         if (!$this->useRawQueryForRead) {
+            return \false;
+        }
+        $defaultLanguage = $this->getDefaultLanguage();
+        // A database table like `wp_trp_dictionary_en_us_en_us` does not exist, so we can skip the translation
+        if ($locale === null || \strtolower($defaultLanguage) === \strtolower($locale)) {
             return \false;
         }
         $query = $this->getTrpQueryManager();

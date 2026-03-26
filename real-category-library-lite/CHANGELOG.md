@@ -3,6 +3,191 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.2.69 (2026-03-26)
+
+
+### Maintenance
+
+* compatibility with WordPress 7.0 (CU-869ck49rt)
+
+
+<details><summary>Dependency updates @devowl-wp/real-product-manager-wp-client 1.20.18</summary>
+
+
+**_Purpose of dependency:_** _A WordPress client for Real Product Manager_
+##### Bug Fixes
+
+* prevent wrong multisite license target selection with WP_SITEURL (CU-869chrw97)</details>
+
+<details><summary>Dependency updates @devowl-wp/utils 1.20.18</summary>
+
+
+**_Purpose of dependency:_** _Utility functionality for all your WordPress plugins._
+##### Bug Fixes
+
+* compatibility with WP Travel Engine (CU-869ccgymq)
+* prevent Google PageSpeed Insights warnings by excluding deprecated APIs (CU-869cbmc6b)
+
+
+##### Performance Improvements
+
+* preload chunks and not wait for resources before rendering the cookie banner to improve Google PageSpeed Insights score (CU-869ccahh5)</details>
+
+<details><summary>Development dependency update @devowl-wp/api 1.8.0</summary>
+
+
+**_Purpose of dependency:_** _Shared typings for all Node.js backends and frontends._
+##### Bug Fixes
+
+* flaky tests (CU-8699ywv2h)
+
+
+##### Code Refactoring
+
+* enhance translatable properties schema with refinable structure (CU-869c8thkx)
+
+
+##### Features
+
+* add versionless contracts,  interpolated params and fix GET request ContentType (CU-8699ywv2h)
+* implement cursor-based pagination for orders retrieval and add reusable pagination metadata schema (CU-869c8thkx)</details>
+
+<details><summary>Development dependency update @devowl-wp/continuous-integration 0.8.1</summary>
+
+
+**_Purpose of dependency:_** _DevOps macros, job templates and jobs for Gitlab CI and @devowl-wp/node-gitlab-ci._
+##### Maintenance
+
+* correctly use peer dependencies (CU-8699tgzbd)
+* introduce complyforce-proxy with OVHcloud storage (CU-8699tgzbd)</details>
+
+<details><summary>Development dependency update @devowl-wp/eslint-config 0.2.23</summary>
+
+
+**_Purpose of dependency:_** _Provide eslint configuration for our complete monorepo._
+##### Performance Improvements
+
+* improve CPU/memory usage in development environment (CU-869cjmbyz)</details>
+
+<details><summary>Development dependency update @devowl-wp/monorepo-utils 0.2.25</summary>
+
+
+**_Purpose of dependency:_** _Predefined monorepo utilities and tasks._
+##### Bug Fixes
+
+* changelog dependencies were not processed correctly and broke (CU-869ckaf4m)</details>
+
+<details><summary>Development dependency update @devowl-wp/ts-config 0.1.20</summary>
+
+
+**_Purpose of dependency:_** _Predefined compiler options for our backends._
+##### Code Refactoring
+
+* make backend package more side-effect-free, concurrent-aware and allow to regsiter shutdown callbacks (CU-869cb1mbz)</details>
+
+<details><summary>Development dependency update @devowl-wp/webpack-config 0.2.55</summary>
+
+
+**_Purpose of dependency:_** _Webpack config builder for multiple ecosystems like standalone React frontends, Antd, Preact and WordPress._
+##### Performance Improvements
+
+* preload chunks and not wait for resources before rendering the cookie banner to improve Google PageSpeed Insights score (CU-869ccahh5)</details>
+
+
+
+
+
+## 4.2.68 (2026-03-18) (not released)
+
+**Note:** This version of the package has not (yet) been released publicly. This happens if changes have been made in dependencies that do not affect this package (e.g. changes for the development of the package). The changes will be rolled out with the next official update.
+
+**Note:** This package (@devowl-wp/real-category-library) has been updated because a dependency, which is also shipped with this package, has changed.
+
+
+
+
+
+
+## 4.2.67 (2026-03-04) (not released)
+
+**Note:** This version of the package has not (yet) been released publicly. This happens if changes have been made in dependencies that do not affect this package (e.g. changes for the development of the package). The changes will be rolled out with the next official update.
+
+**Note:** This package (@devowl-wp/real-category-library) has been updated because a dependency, which is also shipped with this package, has changed.
+
+
+
+
+
+
+## 4.2.66 (2026-02-24) (not released)
+
+**Note:** This version of the package has not (yet) been released publicly. This happens if changes have been made in dependencies that do not affect this package (e.g. changes for the development of the package). The changes will be rolled out with the next official update.
+
+**Note:** This package (@devowl-wp/real-category-library) has been updated because a dependency, which is also shipped with this package, has changed.
+
+
+<details><summary>Development dependency update @devowl-wp/continuous-localization 0.8.34</summary>
+
+
+**_Purpose of dependency:_** _Provide a CLI to push and pull localization files from different translation management systems._
+##### Bug Fixes
+
+* add compatibilityJSON v4 flag to i18next conversion commands to correctly create plural form in POT file (CU-869bu5atn)
+* correctly set msgstr for generate POT file from i18next JSON (CU-869bu5atn)</details>
+
+
+
+
+
+## 4.2.65 (2026-02-11) (not released)
+
+**Note:** This version of the package has not (yet) been released publicly. This happens if changes have been made in dependencies that do not affect this package (e.g. changes for the development of the package). The changes will be rolled out with the next official update.
+
+**Note:** This package (@devowl-wp/real-category-library) has been updated because a dependency, which is also shipped with this package, has changed.
+
+
+<details><summary>Development dependency update @devowl-wp/api 1.6.4</summary>
+
+
+**_Purpose of dependency:_** _Shared typings for all Node.js backends and frontends._
+##### Bug Fixes
+
+* flatten Zod issues when request body, params and headers are parsed (CU-869bdvdfh)
+* update OpenAPI requestBody to indicate required status based on schema (CU-869bdvdfh)</details>
+
+<details><summary>Development dependency update @devowl-wp/continuous-integration 0.8.0</summary>
+
+
+**_Purpose of dependency:_** _DevOps macros, job templates and jobs for Gitlab CI and @devowl-wp/node-gitlab-ci._
+##### Build System
+
+* automatically generate OpenAPI SDK for PHP and TypeScript (CU-869bdvdfh)
+
+
+##### Features
+
+* add support for Postman collection publishing (CU-869bdvdfh)</details>
+
+<details><summary>Development dependency update @devowl-wp/continuous-localization 0.8.33</summary>
+
+
+**_Purpose of dependency:_** _Provide a CLI to push and pull localization files from different translation management systems._
+##### Build System
+
+* set defaultValue to an empty string in i18next extraction config (CU-869bu5atn)</details>
+
+<details><summary>Development dependency update @devowl-wp/eslint-config 0.2.22</summary>
+
+
+**_Purpose of dependency:_** _Provide eslint configuration for our complete monorepo._
+##### Build System
+
+* automatically generate OpenAPI SDK for PHP and TypeScript (CU-869bdvdfh)</details>
+
+
+
+
+
 ## 4.2.64 (2026-02-05)
 
 
