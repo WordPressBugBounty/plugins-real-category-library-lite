@@ -58,7 +58,7 @@ class RpmInitiator extends AbstractInitiator
      */
     public function getLicenseKeyHelpUrl()
     {
-        return \__('https://devowl.io/knowledge-base/codecanyon-where-can-i-find-my-license-key/', RCL_TD);
+        return \__('https://devowl.io/knowledge-base/codecanyon-where-can-i-find-my-license-key/', 'real-category-library-lite');
     }
     /**
      * Documented in AbstractInitiator.

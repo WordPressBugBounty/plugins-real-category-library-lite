@@ -92,7 +92,7 @@ class Core extends BaseCore implements IOverrideCore
     public function i18n()
     {
         parent::i18n();
-        $translatedUrl = \__('https://devowl.io/go/real-category-management?source=rcm-lite', RCL_TD);
+        $translatedUrl = \__('https://devowl.io/go/real-category-management?source=rcm-lite', 'real-category-library-lite');
         \define('RCL_PRO_VERSION', $translatedUrl);
     }
     /**

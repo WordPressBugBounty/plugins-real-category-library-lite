@@ -122,13 +122,13 @@ class TaxOrder
         if (!\taxonomy_exists($taxonomy) || !\post_type_exists($type)) {
             return new WP_Error('rcl_build_hierarchy', \sprintf(
                 // translators:
-                \__('No categories found for this post type (%1$s) with the taxonomy (%2$s).', RCL_TD),
+                \__('No categories found for this post type (%1$s) with the taxonomy (%2$s).', 'real-category-library-lite'),
                 $type,
                 $taxonomy
             ), ['status' => 500]);
         }
         if (!\apply_filters('RCL/Sorting', \true, $taxonomy)) {
-            return new WP_Error('rcl_forbidden_sort', \__('You are not allowed to sort this tree.', RCL_TD), ['status' => 403]);
+            return new WP_Error('rcl_forbidden_sort', \__('You are not allowed to sort this tree.', 'real-category-library-lite'), ['status' => 403]);
         }
         // Receive tree
         $taxTree = new \DevOwl\RealCategoryLibrary\TaxTree($type, $taxonomy, null, \true, $parent);
@@ -164,7 +164,7 @@ class TaxOrder
             }
         }
         if ($current === null) {
-            return new WP_Error('rcl_build_hierarchy', \__('No item found.', RCL_TD), ['status' => 500]);
+            return new WP_Error('rcl_build_hierarchy', \__('No item found.', 'real-category-library-lite'), ['status' => 500]);
         }
         // Create order
         for ($i = 0; $i < \count($tree); $i++) {

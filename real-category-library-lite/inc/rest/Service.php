@@ -94,7 +94,7 @@ class Service
         $nextId = \intval($request->get_param('nextId'));
         // Check type and taxonomy
         if (!$type || !$taxonomy || !\is_taxonomy_hierarchical($taxonomy)) {
-            return new WP_Error('rest_rcl_hierarchy_no_type', \__('No type or valid taxonomy provided.', RCL_TD), ['status' => 500]);
+            return new WP_Error('rest_rcl_hierarchy_no_type', \__('No type or valid taxonomy provided.', 'real-category-library-lite'), ['status' => 500]);
         }
         $taxOrder = $this->getCore()->getTaxOrder();
         $hierarchy = $taxOrder->relocate($type, $taxonomy, $id, $parent, $nextId);
@@ -125,7 +125,7 @@ class Service
         $referer = \wp_get_referer();
         $remember = (bool) $request->get_param('remember');
         if (empty($type) || empty($taxonomy)) {
-            return new WP_Error('rest_rcl_tree_no_type', \__('No type or taxonomy provided.', RCL_TD), ['status' => 500]);
+            return new WP_Error('rest_rcl_tree_no_type', \__('No type or taxonomy provided.', 'real-category-library-lite'), ['status' => 500]);
         }
         // Receive tree
         $taxTree = new TaxTree($type, $taxonomy, $referer);
@@ -138,7 +138,7 @@ class Service
             if ($term) {
                 return new WP_REST_Response($taxTree->enrichTerm($term));
             } else {
-                return new WP_Error('rest_rcl_tree_term_not_found', \__('The passed term id was not found.', RCL_TD), ['status' => 404]);
+                return new WP_Error('rest_rcl_tree_term_not_found', \__('The passed term id was not found.', 'real-category-library-lite'), ['status' => 404]);
             }
         } else {
             return new WP_REST_Response(['tree' => $taxTree->getCats(), 'selectedId' => $taxTree->getSelectedId()]);
@@ -153,10 +153,10 @@ class Service
     public static function permit($cap = 'manage_categories')
     {
         if (!\current_user_can($cap)) {
-            return new WP_Error('rest_rcl_forbidden', \__('Forbidden'), ['status' => 403]);
+            return new WP_Error('rest_rcl_forbidden', \__('Forbidden', 'real-category-library-lite'), ['status' => 403]);
         }
         if (!\wp_rcl_active()) {
-            return new WP_Error('rest_rcl_not_activated', \__('Real Category Management is not active for the current user.', RCL_TD), ['status' => 500]);
+            return new WP_Error('rest_rcl_not_activated', \__('Real Category Management is not active for the current user.', 'real-category-library-lite'), ['status' => 500]);
         }
         return null;
     }

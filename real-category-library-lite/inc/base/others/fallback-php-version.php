@@ -11,11 +11,11 @@ if (!function_exists('rcl_skip_php_admin_notice')) {
             $data = get_plugin_data(RCL_FILE, true, false);
             echo '<div class=\'notice notice-error\'>
 				<p><strong>' .
-                $data['Name'] .
+                esc_html($data['Name']) .
                 '</strong> could not be initialized because you need minimum PHP version ' .
-                RCL_MIN_PHP .
+                esc_html(RCL_MIN_PHP) .
                 ' ... you are running: ' .
-                phpversion() .
+                esc_html(phpversion()) .
                 '.
 			</div>';
         }

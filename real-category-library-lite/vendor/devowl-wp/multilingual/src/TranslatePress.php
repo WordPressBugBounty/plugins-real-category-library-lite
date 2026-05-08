@@ -217,7 +217,7 @@ class TranslatePress extends AbstractOutputBufferPlugin
     // Documented in AbstractOutputBufferPlugin
     public function isCurrentlyInEditorPreview()
     {
-        return isset($_GET[self::EDIT_QUERY_VAR]) && $_GET[self::EDIT_QUERY_VAR] === 'preview';
+        return isset($_GET[self::EDIT_QUERY_VAR]) && \sanitize_text_field(\wp_unslash($_GET[self::EDIT_QUERY_VAR])) === 'preview';
     }
     // Documented in AbstractOutputBufferPlugin
     public function translateInput($input, $context = null)

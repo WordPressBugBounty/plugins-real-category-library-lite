@@ -6,7 +6,7 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
+    'DevOwl\\RealCategoryLibrary\\Vendor\\Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
     'DevOwl\\RealCategoryLibrary\\Activator' => $baseDir . '/inc/Activator.php',
     'DevOwl\\RealCategoryLibrary\\AdInitiator' => $baseDir . '/inc/AdInitiator.php',
     'DevOwl\\RealCategoryLibrary\\Assets' => $baseDir . '/inc/Assets.php',
@@ -59,7 +59,6 @@ return array(
     'DevOwl\\RealCategoryLibrary\\Vendor\\DevOwl\\RealProductManagerWpClient\\client\\TelemetryData' => $vendorDir . '/devowl-wp/real-product-manager-wp-client/src/client/TelemetryData.php',
     'DevOwl\\RealCategoryLibrary\\Vendor\\DevOwl\\RealProductManagerWpClient\\license\\License' => $vendorDir . '/devowl-wp/real-product-manager-wp-client/src/license/License.php',
     'DevOwl\\RealCategoryLibrary\\Vendor\\DevOwl\\RealProductManagerWpClient\\license\\LicenseActivation' => $vendorDir . '/devowl-wp/real-product-manager-wp-client/src/license/LicenseActivation.php',
-    'DevOwl\\RealCategoryLibrary\\Vendor\\DevOwl\\RealProductManagerWpClient\\license\\PluginUpdateChecker' => $vendorDir . '/devowl-wp/real-product-manager-wp-client/src/license/PluginUpdateChecker.php',
     'DevOwl\\RealCategoryLibrary\\Vendor\\DevOwl\\RealProductManagerWpClient\\license\\PluginUpdateLicensePool' => $vendorDir . '/devowl-wp/real-product-manager-wp-client/src/license/PluginUpdateLicensePool.php',
     'DevOwl\\RealCategoryLibrary\\Vendor\\DevOwl\\RealProductManagerWpClient\\license\\TelemetryData' => $vendorDir . '/devowl-wp/real-product-manager-wp-client/src/license/TelemetryData.php',
     'DevOwl\\RealCategoryLibrary\\Vendor\\DevOwl\\RealProductManagerWpClient\\rest\\Announcement' => $vendorDir . '/devowl-wp/real-product-manager-wp-client/src/rest/Announcement.php',

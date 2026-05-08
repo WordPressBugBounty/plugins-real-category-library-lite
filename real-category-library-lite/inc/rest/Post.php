@@ -54,7 +54,7 @@ class Post
         $isCopy = \gettype($isCopy) === 'string' ? $isCopy === 'true' : $isCopy;
         $taxonomy = $request->get_param('taxonomy');
         if (!\is_array($ids) || \count($ids) === 0 || $to === null) {
-            return new WP_Error('rest_rcl_posts_bulk_move_failed', \__('Something went wrong.', RCL_TD), ['status' => 500]);
+            return new WP_Error('rest_rcl_posts_bulk_move_failed', \__('Something went wrong.', 'real-category-library-lite'), ['status' => 500]);
         }
         foreach ($ids as $value) {
             \wp_set_object_terms(\intval($value), $to, $taxonomy, $isCopy);

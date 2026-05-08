@@ -1,5 +1,5 @@
 # Copyright (C) 2026 devowl.io
-# This file is distributed under the same license as the Real Category Management plugin.
+# This file is distributed under the GPLv2 or later.
 msgid ""
 msgstr ""
 "Project-Id-Version: n/a\n"
@@ -50,23 +50,23 @@ msgstr ""
 msgid "In the PRO version you can also enable the tree on pages and custom post types."
 msgstr ""
 
-#: inc/AdInitiator.php:76
+#: inc/AdInitiator.php:79
 msgid "Supports WooCommerce products"
 msgstr ""
 
-#: inc/AdInitiator.php:77
+#: inc/AdInitiator.php:80
 msgid "Shop managers with many products also have to maintain numerous categories. Wouldn't it be helpful to maintain the product categories and attributes more elegantly?"
 msgstr ""
 
-#: inc/AdInitiator.php:85
+#: inc/AdInitiator.php:88
 msgid "Switch pages without page reload"
 msgstr ""
 
-#: inc/AdInitiator.php:86
+#: inc/AdInitiator.php:89
 msgid "Switching between pages or categories can usually take some time. With this plugin you can enjoy a fast loading of your tables."
 msgstr ""
 
-#: inc/AdInitiator.php:101
+#: inc/AdInitiator.php:104
 msgid "Go to settings"
 msgstr ""
 
@@ -87,39 +87,39 @@ msgstr ""
 msgid "Categories"
 msgstr ""
 
-#: inc/rest/Post.php:61
+#: inc/rest/Post.php:63
 msgid "Something went wrong."
 msgstr ""
 
-#: inc/rest/Service.php:111
+#: inc/rest/Service.php:113
 msgid "No type or valid taxonomy provided."
 msgstr ""
 
-#: inc/rest/Service.php:145
+#: inc/rest/Service.php:151
 msgid "No type or taxonomy provided."
 msgstr ""
 
-#: inc/rest/Service.php:163
+#: inc/rest/Service.php:173
 msgid "The passed term id was not found."
 msgstr ""
 
-#: inc/rest/Service.php:183
+#: inc/rest/Service.php:195
 msgid "Forbidden"
 msgstr ""
 
-#: inc/rest/Service.php:188
+#: inc/rest/Service.php:200
 msgid "Real Category Management is not active for the current user."
 msgstr ""
 
-#: inc/rest/Term.php:90
+#: inc/rest/Term.php:92
 msgid "Unknown error: The term could not be created."
 msgstr ""
 
-#: inc/rest/Term.php:123
+#: inc/rest/Term.php:127
 msgid "Category does not exist."
 msgstr ""
 
-#: inc/rest/Term.php:127
+#: inc/rest/Term.php:133
 msgid "You can not delete the default category."
 msgstr ""
 
@@ -133,11 +133,11 @@ msgstr ""
 msgid "No categories found for this post type (%1$s) with the taxonomy (%2$s)."
 msgstr ""
 
-#: inc/TaxOrder.php:171
+#: inc/TaxOrder.php:176
 msgid "You are not allowed to sort this tree."
 msgstr ""
 
-#: inc/TaxOrder.php:218
+#: inc/TaxOrder.php:225
 msgid "No item found."
 msgstr ""
 

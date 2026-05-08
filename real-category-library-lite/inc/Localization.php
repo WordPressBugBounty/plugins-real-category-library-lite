@@ -26,9 +26,9 @@ class Localization
     protected function getPackageInfo($type)
     {
         if ($type === Constants::LOCALIZATION_BACKEND) {
-            return [RCL_PATH . '/languages', RCL_TD];
+            return [RCL_PATH . '/languages', 'real-category-library-lite'];
         } else {
-            return [RCL_PATH . '/' . Constants::LOCALIZATION_PUBLIC_JSON_I18N, RCL_TD];
+            return [RCL_PATH . '/' . Constants::LOCALIZATION_PUBLIC_JSON_I18N, 'real-category-library-lite'];
         }
     }
 }

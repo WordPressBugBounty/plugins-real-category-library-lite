@@ -8,9 +8,11 @@
  * Description:     Manage posts, pages and custom post-types in an explorer-like tree view and create a custom order for your categories and other taxonomies.
  * Author:          devowl.io
  * Author URI:      https://devowl.io
- * Version:                                                                                                           4.2.69
- * Text Domain:     real-category-library
+ * Version:                                                                                                              4.2.72
+ * Text Domain:     real-category-library-lite
  * Domain Path:     /languages
+ * License:         GPLv2 or later
+ * License URI:     https://www.gnu.org/licenses/gpl-2.0.en.html
  */
 
 defined('ABSPATH') or die('No script kiddies please!'); // Avoid direct file request

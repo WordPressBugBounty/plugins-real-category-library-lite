@@ -69,6 +69,53 @@ class TemporaryTextDomain
         $this->hooks();
     }
     /**
+     * Run translation calls inside a temporary domain remap.
+     *
+     * Within this callback you can keep using `__()`, `_x()` and related functions with the fallback
+     * text domain (e.g. the plugin text domain). While this method runs, these calls are redirected to
+     * the temporary text domain so translated defaults can still be loaded from the temporary MO/PO data.
+     * The remap is limited to this callback and is always cleaned up, even if an exception occurs.
+     *
+     * @see https://developer.wordpress.org/reference/hooks/gettext/
+     * @param callable $callback
+     */
+    public function translate($callback)
+    {
+        $isFallbackDomainRemapActive = \false;
+        $mapGettext = function ($translation, $text, $domain) use(&$isFallbackDomainRemapActive) {
+            if ($domain !== $this->fallbackDomain || $isFallbackDomainRemapActive) {
+                return $translation;
+            }
+            $isFallbackDomainRemapActive = \true;
+            try {
+                // phpcs:ignore WordPress.WP.I18n.LowLevelTranslationFunction, WordPress.WP.I18n.NonSingularStringLiteralText, WordPress.WP.I18n.NonSingularStringLiteralDomain -- Intentional low-level translate for temporary-domain remap; arguments are dynamic.
+                return \translate($text, $this->domain);
+            } finally {
+                $isFallbackDomainRemapActive = \false;
+            }
+        };
+        $mapGettextWithContext = function ($translation, $text, $context, $domain) use(&$isFallbackDomainRemapActive) {
+            if ($domain !== $this->fallbackDomain || $isFallbackDomainRemapActive) {
+                return $translation;
+            }
+            $isFallbackDomainRemapActive = \true;
+            try {
+                // phpcs:ignore WordPress.WP.I18n.LowLevelTranslationFunction, WordPress.WP.I18n.NonSingularStringLiteralText, WordPress.WP.I18n.NonSingularStringLiteralContext, WordPress.WP.I18n.NonSingularStringLiteralDomain -- Intentional low-level translate_with_gettext_context for temporary-domain remap; arguments are dynamic.
+                return \translate_with_gettext_context($text, $context, $this->domain);
+            } finally {
+                $isFallbackDomainRemapActive = \false;
+            }
+        };
+        \add_filter('gettext', $mapGettext, 0, 3);
+        \add_filter('gettext_with_context', $mapGettextWithContext, 0, 4);
+        try {
+            return $callback();
+        } finally {
+            \remove_filter('gettext', $mapGettext, 0, 3);
+            \remove_filter('gettext_with_context', $mapGettextWithContext, 0, 4);
+        }
+    }
+    /**
      * Create PO/MO instance from language file(s).
      *
      * @param string|string[] $languageFile Can be a `.po`, `.pot` or `.mo` file. When passed as array,
@@ -146,7 +193,7 @@ class TemporaryTextDomain
         \remove_filter('gettext_with_context', [$this, 'gettext_with_context'], 1, 4);
     }
     /**
-     * Checs if this temporary text domain is the latest registered one in stack?
+     * Checks if this temporary text domain is the latest registered one in stack?
      */
     public function isCurrentlyActive()
     {
@@ -167,7 +214,8 @@ class TemporaryTextDomain
                 if ($this->isLocalePotFile) {
                     return $text;
                 }
-                return \call_user_func('translate', $text, $this->fallbackDomain);
+                // phpcs:ignore WordPress.WP.I18n.LowLevelTranslationFunction, WordPress.WP.I18n.NonSingularStringLiteralText, WordPress.WP.I18n.NonSingularStringLiteralDomain -- Fallback to main domain when no temporary MO is loaded; arguments are dynamic.
+                return \translate($text, $this->fallbackDomain);
             }
             return $this->pomo->translate($text);
         }
@@ -188,7 +236,8 @@ class TemporaryTextDomain
                 if ($this->isLocalePotFile) {
                     return $text;
                 }
-                return \call_user_func('translate_with_gettext_context', $text, $context, $this->fallbackDomain);
+                // phpcs:ignore WordPress.WP.I18n.LowLevelTranslationFunction, WordPress.WP.I18n.NonSingularStringLiteralText, WordPress.WP.I18n.NonSingularStringLiteralContext, WordPress.WP.I18n.NonSingularStringLiteralDomain -- Fallback to main domain when no temporary MO is loaded; arguments are dynamic.
+                return \translate_with_gettext_context($text, $context, $this->fallbackDomain);
             }
             return $this->pomo->translate($text, $context);
         }
@@ -232,7 +281,7 @@ class TemporaryTextDomain
     {
         $isLocalePotFile = \false;
         // Never use the language of the compatible plugin while deactivation
-        if (isset($_GET['action'], $_GET['plugin']) && $_GET['action'] === 'deactivate') {
+        if (isset($_GET['action'], $_GET['plugin']) && \sanitize_text_field(\wp_unslash($_GET['action'])) === 'deactivate') {
             $useLocale = '';
         } elseif (\is_string($compLanguageOrLocale)) {
             $useLocale = $compLanguageOrLocale;

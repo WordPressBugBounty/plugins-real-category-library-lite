@@ -27,7 +27,7 @@ class ConfigPage
     public function admin_menu()
     {
         $pluginName = $this->getCore()->getPluginData()['Name'];
-        \add_submenu_page('options-general.php', $pluginName, \__('Category Management', RCL_TD), Core::MANAGE_MIN_CAPABILITY, self::COMPONENT_ID, [$this, 'render_component_library']);
+        \add_submenu_page('options-general.php', $pluginName, \__('Category Management', 'real-category-library-lite'), Core::MANAGE_MIN_CAPABILITY, self::COMPONENT_ID, [$this, 'render_component_library']);
     }
     /**
      * Show a "Settings" link in plugins list.
@@ -37,7 +37,7 @@ class ConfigPage
      */
     public function plugin_action_links($actions)
     {
-        $actions[] = \sprintf('<a href="%s">%s</a>', $this->getUrl(), \__('Settings'));
+        $actions[] = \sprintf('<a href="%s">%s</a>', $this->getUrl(), \__('Settings', 'real-category-library-lite'));
         return $actions;
     }
     /**
@@ -45,7 +45,7 @@ class ConfigPage
      */
     public function render_component_library()
     {
-        echo '<div id="' . self::COMPONENT_ID . '" class="wrap"></div>';
+        echo '<div id="' . \esc_attr(self::COMPONENT_ID) . '" class="wrap"></div>';
     }
     /**
      * Check if a given page string is this config page or from the current page `pagenow`.

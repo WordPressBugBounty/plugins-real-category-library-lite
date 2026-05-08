@@ -60,7 +60,7 @@ class Term
         if (\is_wp_error($insert)) {
             return new WP_Error('rest_rcl_term_' . $insert->get_error_code(), \html_entity_decode($insert->get_error_message()), ['status' => 500]);
         } elseif ($insert === 0) {
-            return new WP_Error('rest_rcl_term_failed', \__('Unknown error: The term could not be created.', RCL_TD), ['status' => 500]);
+            return new WP_Error('rest_rcl_term_failed', \__('Unknown error: The term could not be created.', 'real-category-library-lite'), ['status' => 500]);
         } else {
             $taxTree = new TaxTree($type, $taxonomy);
             return new WP_REST_Response($taxTree->enrichTerm(\get_term($insert)));
@@ -85,9 +85,9 @@ class Term
         if (\is_wp_error($delete)) {
             return new WP_Error('rest_rcl_term_' . $delete->get_error_code(), \html_entity_decode($delete->get_error_message()), ['status' => 500]);
         } elseif ($delete === \false) {
-            return new WP_Error('rest_rcl_term_invalid', \__('Category does not exist.', RCL_TD), ['status' => 500]);
+            return new WP_Error('rest_rcl_term_invalid', \__('Category does not exist.', 'real-category-library-lite'), ['status' => 500]);
         } elseif ($delete === 0) {
-            return new WP_Error('rest_rcl_term_default', \__('You can not delete the default category.', RCL_TD), ['status' => 500]);
+            return new WP_Error('rest_rcl_term_default', \__('You can not delete the default category.', 'real-category-library-lite'), ['status' => 500]);
         } else {
             return new WP_REST_Response($delete);
         }
