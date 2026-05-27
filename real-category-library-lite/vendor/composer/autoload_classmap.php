@@ -37,6 +37,7 @@ return array(
     'DevOwl\\RealCategoryLibrary\\Vendor\\DevOwl\\Multilingual\\None' => $vendorDir . '/devowl-wp/multilingual/src/None.php',
     'DevOwl\\RealCategoryLibrary\\Vendor\\DevOwl\\Multilingual\\PolyLang' => $vendorDir . '/devowl-wp/multilingual/src/PolyLang.php',
     'DevOwl\\RealCategoryLibrary\\Vendor\\DevOwl\\Multilingual\\Sync' => $vendorDir . '/devowl-wp/multilingual/src/Sync.php',
+    'DevOwl\\RealCategoryLibrary\\Vendor\\DevOwl\\Multilingual\\SyncFromExternalSourceTrait' => $vendorDir . '/devowl-wp/multilingual/src/SyncFromExternalSourceTrait.php',
     'DevOwl\\RealCategoryLibrary\\Vendor\\DevOwl\\Multilingual\\TemporaryTextDomain' => $vendorDir . '/devowl-wp/multilingual/src/TemporaryTextDomain.php',
     'DevOwl\\RealCategoryLibrary\\Vendor\\DevOwl\\Multilingual\\TranslatePress' => $vendorDir . '/devowl-wp/multilingual/src/TranslatePress.php',
     'DevOwl\\RealCategoryLibrary\\Vendor\\DevOwl\\Multilingual\\Utils' => $vendorDir . '/devowl-wp/multilingual/src/Utils.php',

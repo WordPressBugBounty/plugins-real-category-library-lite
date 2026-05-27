@@ -95,6 +95,7 @@ class ComposerStaticInit28193729ee0f9308bdeb00b1f766a9c6
         'DevOwl\\RealCategoryLibrary\\Vendor\\DevOwl\\Multilingual\\None' => __DIR__ . '/..' . '/devowl-wp/multilingual/src/None.php',
         'DevOwl\\RealCategoryLibrary\\Vendor\\DevOwl\\Multilingual\\PolyLang' => __DIR__ . '/..' . '/devowl-wp/multilingual/src/PolyLang.php',
         'DevOwl\\RealCategoryLibrary\\Vendor\\DevOwl\\Multilingual\\Sync' => __DIR__ . '/..' . '/devowl-wp/multilingual/src/Sync.php',
+        'DevOwl\\RealCategoryLibrary\\Vendor\\DevOwl\\Multilingual\\SyncFromExternalSourceTrait' => __DIR__ . '/..' . '/devowl-wp/multilingual/src/SyncFromExternalSourceTrait.php',
         'DevOwl\\RealCategoryLibrary\\Vendor\\DevOwl\\Multilingual\\TemporaryTextDomain' => __DIR__ . '/..' . '/devowl-wp/multilingual/src/TemporaryTextDomain.php',
         'DevOwl\\RealCategoryLibrary\\Vendor\\DevOwl\\Multilingual\\TranslatePress' => __DIR__ . '/..' . '/devowl-wp/multilingual/src/TranslatePress.php',
         'DevOwl\\RealCategoryLibrary\\Vendor\\DevOwl\\Multilingual\\Utils' => __DIR__ . '/..' . '/devowl-wp/multilingual/src/Utils.php',
