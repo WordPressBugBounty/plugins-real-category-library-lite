@@ -13,41 +13,22 @@ msgstr ""
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 
-#. Plugin Name of the plugin
-#: index.php
-msgid "Real Category Management"
-msgstr ""
-
-#. Plugin URI of the plugin
-#: index.php
-msgid "https://codecanyon.net/item/wordpress-real-category-management-custom-category-order-tree-view/13580393"
-msgstr ""
-
-#. Description of the plugin
-#: index.php
-msgid "Manage posts, pages and custom post-types in an explorer-like tree view and create a custom order for your categories and other taxonomies."
-msgstr ""
-
-#. Author of the plugin
-#: index.php
-msgid "devowl.io"
-msgstr ""
-
-#. Author URI of the plugin
-#: index.php
-msgid "https://devowl.io"
-msgstr ""
-
 #: inc/AdInitiator.php:58
 msgid "Full control over your categories"
 msgstr ""
 
 #: inc/AdInitiator.php:59
-msgid "Do you maintain many categories? The default view of the categories can be a bit confusing, can't it? This plugin creates an explorer-like tree on the left side of your posts table. Create, rename, delete or rearrange your categories with a single click!"
+msgid ""
+"Do you maintain many categories? The default view of the categories can be a "
+"bit confusing, can't it? This plugin creates an explorer-like tree on the "
+"left side of your posts table. Create, rename, delete or rearrange your "
+"categories with a single click!"
 msgstr ""
 
 #: inc/AdInitiator.php:71
-msgid "In the PRO version you can also enable the tree on pages and custom post types."
+msgid ""
+"In the PRO version you can also enable the tree on pages and custom post "
+"types."
 msgstr ""
 
 #: inc/AdInitiator.php:79
@@ -55,7 +36,10 @@ msgid "Supports WooCommerce products"
 msgstr ""
 
 #: inc/AdInitiator.php:80
-msgid "Shop managers with many products also have to maintain numerous categories. Wouldn't it be helpful to maintain the product categories and attributes more elegantly?"
+msgid ""
+"Shop managers with many products also have to maintain numerous categories. "
+"Wouldn't it be helpful to maintain the product categories and attributes "
+"more elegantly?"
 msgstr ""
 
 #: inc/AdInitiator.php:88
@@ -63,7 +47,9 @@ msgid "Switch pages without page reload"
 msgstr ""
 
 #: inc/AdInitiator.php:89
-msgid "Switching between pages or categories can usually take some time. With this plugin you can enjoy a fast loading of your tables."
+msgid ""
+"Switching between pages or categories can usually take some time. With this "
+"plugin you can enjoy a fast loading of your tables."
 msgstr ""
 
 #: inc/AdInitiator.php:104
@@ -74,8 +60,26 @@ msgstr ""
 msgid "https://devowl.io/go/real-category-management?source=rcm-lite"
 msgstr ""
 
-#: inc/overrides/pro/PageCategory.php:38
-#: inc/overrides/pro/PageCategory.php:55
+#: inc/RpmInitiator.php:60
+msgid ""
+"https://devowl.io/knowledge-base/codecanyon-where-can-i-find-my-license-key/"
+msgstr ""
+
+#. translators:
+#: inc/TaxOrder.php:162
+#, php-format
+msgid "No categories found for this post type (%1$s) with the taxonomy (%2$s)."
+msgstr ""
+
+#: inc/TaxOrder.php:176
+msgid "You are not allowed to sort this tree."
+msgstr ""
+
+#: inc/TaxOrder.php:225
+msgid "No item found."
+msgstr ""
+
+#: inc/overrides/pro/PageCategory.php:38 inc/overrides/pro/PageCategory.php:55
 msgid "Page Categories"
 msgstr ""
 
@@ -123,28 +127,39 @@ msgstr ""
 msgid "You can not delete the default category."
 msgstr ""
 
-#: inc/RpmInitiator.php:60
-msgid "https://devowl.io/knowledge-base/codecanyon-where-can-i-find-my-license-key/"
-msgstr ""
-
-#. translators:
-#: inc/TaxOrder.php:162
-#, php-format
-msgid "No categories found for this post type (%1$s) with the taxonomy (%2$s)."
-msgstr ""
-
-#: inc/TaxOrder.php:176
-msgid "You are not allowed to sort this tree."
-msgstr ""
-
-#: inc/TaxOrder.php:225
-msgid "No item found."
-msgstr ""
-
 #: inc/view/ConfigPage.php:32
 msgid "Category Management"
 msgstr ""
 
 #: inc/view/ConfigPage.php:46
 msgid "Settings"
+msgstr ""
+
+#. Description of the plugin
+#: index.php
+msgid ""
+"Manage posts, pages and custom post-types in an explorer-like tree view and "
+"create a custom order for your categories and other taxonomies."
+msgstr ""
+
+#. Plugin Name of the plugin
+#: index.php
+msgid "Real Category Management"
+msgstr ""
+
+#. Author of the plugin
+#: index.php
+msgid "devowl.io"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: index.php
+msgid ""
+"https://codecanyon.net/item/wordpress-real-category-management-custom-"
+"category-order-tree-view/13580393"
+msgstr ""
+
+#. Author URI of the plugin
+#: index.php
+msgid "https://devowl.io"
 msgstr ""
